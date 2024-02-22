@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import "./style.css";
 import ButtonPrimary from "../../commen/button/ButtonPrimary";
@@ -11,6 +12,7 @@ const HomeIndex = () => {
         </div>
       </section>
 
+      {/****** Event Card*****/}
       <div className="container-xxl py-5">
         <div className="container">
           <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -66,6 +68,7 @@ const HomeIndex = () => {
           </div>
         </div>
       </div>
+      {/*********** Event Card  **********/}
 
       <div
         className="container newsletter mt-5 wow fadeIn"
