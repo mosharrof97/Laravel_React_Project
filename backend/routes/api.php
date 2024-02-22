@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditorController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\EventBookingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,18 @@ Route::prefix('admin')->group(function (){
     Route::get('/view/{id}', [AdminController::class, 'adminView']);
     Route::get('/create', [AdminController::class, 'createAdmin']);
     Route::post('/create', [AdminController::class, 'storeAdmin']);  
+    Route::delete('/delete/{id}', [AdminController::class, 'delete']);
+
+
+    /////-==========Event==========-///////
+    Route::prefix('event')->group(function (){
+        Route::get('/list', [EventController::class, 'list']);
+        Route::get('/view/{id}', [EventController::class, 'view']);
+        Route::post('/create', [EventController::class, 'create']);
+        Route::put('/update/{id}', [EventController::class, 'update']);
+        Route::delete('/delete/{id}', [EventController::class, 'delete']);
+    });
+    /////-==========Event==========-///////
 });
 
 /////////////////////////////////////////////////////////////////
@@ -52,11 +66,18 @@ Route::prefix('student')->group(function (){
     Route::get('/view/{id}', [StudentController::class, 'studentView']);
     Route::get('/create', [StudentController::class, 'createStudent']);
     Route::post('/create', [StudentController::class, 'storeStudent']);
+    Route::delete('/delete/{id}', [StudentController::class, 'delete']);
 
-    ////----
 
 });
 /////////////////////////////////////////////////////////////////
-Route::group(function (){
 
+/////-==========Event==========-///////
+Route::prefix('event')->group(function (){
+    Route::get('/list', [EventBookingController::class, 'list']);
+    Route::get('/view/{id}', [EventBookingController::class, 'view']);
+    Route::post('/create', [EventBookingController::class, 'create']);
+    Route::put('/update/{id}', [EventBookingController::class, 'update']);
+    Route::delete('/delete/{id}', [EventBookingController::class, 'delete']);
 });
+/////-==========Event==========-///////

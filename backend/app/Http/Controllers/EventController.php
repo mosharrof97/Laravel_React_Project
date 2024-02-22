@@ -37,20 +37,18 @@ class EventController extends Controller
 
         if ($request->hasFile('image')) {
            $imageName = 'User_' . time() . '_' . mt_rand(100000, 20000000) . '.' . $request->file('image')->extension();
-
-           // dd($imageName);
            $request->file('image')->move(public_path('upload/UserImage'), $imageName);
-
         }
 
-        Student::create([
+        Event::create([
             'name' => $request->name,
             'start_date' => $request->start_date,
             'end_date' => $request->end_date,
             'start_time' => $request->start_time,
             'end_time' => $request->end_time,
             'location'=> $request->location,
-            'image'=> $imageName,
+            // 'image'=> $imageName,
+            'image'=> $request->image,
             'description'=> $request->description,
         ]);
         return response()->json([
@@ -73,11 +71,10 @@ class EventController extends Controller
 
         if ($request->hasFile('image')) {
             $imageName = 'User_' . time() . '_' . mt_rand(100000, 20000000) . '.' . $request->file('image')->extension();
-            // dd($imageName);
             $request->file('image')->move(public_path('upload/UserImage'), $imageName);
         }
 
-        $data= Student::find($id);
+        $data= Event::find($id);
         $data->update([
             'name' => $request->name,
             'start_date' => $request->start_date,

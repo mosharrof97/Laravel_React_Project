@@ -1,35 +1,61 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from "react-router-dom";
+import Layout from "./frontend/Index";
+import Admin from "./backend/index";
+import StudentList from "./backend/admin/page/student/list";
+import StudentView from "./backend/admin/page/student/view";
+import EventList from "./backend/admin/page/event/list";
+import EventView from "./backend/admin/page/event/view";
+import CreateEvent from "./backend/admin/page/event/createEvent";
+import EventBookingList from "./backend/admin/page/eventBooking/list";
+
+import AdminSignup from "./backend/admin/auth/signup";
+import AdminLogin from "./backend/admin/auth/signup";
+
+import StudentSignUp from "./backend/student/auth/signup";
+import StudentLogin from "./backend/student/auth/Login";
+
+import Home from "./frontend/pages/HomePage/HomeIndex";
+import BookingPage from "./frontend/pages/BookingPage/BookingPage";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route path="/admin" element={<Admin />}>
+        <Route path="list" element={<StudentList />} />
+        <Route path="view" element={<StudentView />} />
+
+        {/********* Event *********/}
+        <Route path="event/list" element={<EventList />} />
+        <Route path="event/view" element={<EventView />} />
+        <Route path="event/create" element={<CreateEvent />} />
+        {/********* Event *********/}
+        {/********* Event Booking*********/}
+        <Route path="event/booking/list" element={<EventBookingList />} />
+        {/********* Event Booking*********/}
+
+        <Route path="signup" element={<AdminSignup />} />
+        <Route path="login" element={<AdminLogin />} />
+
+        {/* <Route path="*" element={<Missing />} /> */}
+      </Route>
+
+      <Route path="/student" element={<Admin />}>
+        <Route path="signup" element={<StudentSignUp />} />
+        <Route path="login" element={<StudentLogin />} />
+
+        {/* <Route path="*" element={<Missing />} /> */}
+      </Route>
+
+      <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="event/booking" element={<BookingPage />} />
+        <Route path="signup" element={<StudentSignUp />} />
+        <Route path="login" element={<StudentLogin />} />
+
+        {/* <Route path="*" element={<Missing />} /> */}
+      </Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;

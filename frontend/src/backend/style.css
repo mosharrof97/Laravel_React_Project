@@ -1,0 +1,54 @@
+/********** Template CSS **********/
+*{
+    margin: 0;
+    padding: 0;
+  }
+  :root {
+    --primary: #FEA116;
+    --light: #F1F8FF;
+    --dark: #0F172B;
+  }
+  body{
+    background-color: #F1F8FF;
+  }
+  a{
+    text-decoration: none !important;
+  }
+  ul{
+    list-style: none;
+  }
+  .text-primary{
+    color: var(--primary) !important;
+  }
+  .text-light{
+    color: var(--light) !important;
+  }
+  .text-dark{
+    color: var(--dark) !important;
+  }
+  .bg-primary{
+    background-color: var(--primary) !important;
+  }
+  .bg-light{
+    background-color: var(--light) !important;
+  }
+  .bg-dark{
+    background-color: var(--dark) !important;
+  }
+  .fw-medium {
+    font-weight: 500 !important;
+  }
+  
+  .fw-semi-bold {
+    font-weight: 600 !important;
+  }
+  
+  .back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+  }
+
+  /* https://www.youtube.com/watch?v=vWmu1xEm-Qg */

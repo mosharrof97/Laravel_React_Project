@@ -1,0 +1,52 @@
+.side-bar {
+    /* width: 280px; */
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar a {
+    color: var(--primary);
+}
+
+.sidebar_container {
+    background-color: var(--dark);
+    padding: 10px 10px 10px 20px;
+}
+
+.side-body {
+    height: 72vh;
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    height: 0;
+    width: 0px;
+}
+
+.bg-primary {
+    background-color: var(--dark) !important;
+    color: var(--light);
+}
+
+.accordion-item {
+    background-color: var(--light) !important;
+}
+
+.accordion-button {
+    background-color: var(--dark) !important;
+    color: var(--light);
+}
+
+.accordion-button:not(.collapsed) {
+    color: #ffffff;
+}
+
+.accordion-button::after {}
+
+.bottom_sidebar {
+    padding-left: 10px;
+}
+
+.bottom_sidebar a {
+    text-decoration: none;
+}

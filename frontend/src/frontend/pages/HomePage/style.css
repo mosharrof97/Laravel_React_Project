@@ -1,0 +1,109 @@
+
+.homeBannar {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+
+}
+
+.bannar-color {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(38 38 38 / 50%);
+}
+
+.bannar-caption {
+    position: absolute;
+    right: 20%;
+    top: 33%;
+    left: 20%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+
+.contant-div {
+    max-width: 100%;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    left: -55px;
+    margin-top: -1px;
+    background: var(--primary);
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    right: -55px;
+    margin-top: -1px;
+    background: var(--primary);
+}
+
+.animition-title {
+    animation: mymove 2s;
+}
+
+@keyframes mymove {
+    0% {
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+.display-3 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.BannarBtnLeft{
+    animation: BannarBtnLeft 1.5s;
+    margin-right: 10px;
+}
+@keyframes BannarBtnLeft {
+    0% {
+        transform: translate3d(-50%, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+.BannarBtnRight{
+    animation: BannarBtnRight 1.5s;
+    margin-left: 10px;
+}
+@keyframes BannarBtnRight {
+    0% {
+        transform: translate3d(50%, 0, 0);
+        visibility: visible;
+    }
+    100% {
+        transform: translateZ(0);
+    }
+}
+.booking {
+    position: relative;
+    margin-top: -50px !important;
+    z-index: 1;
+}

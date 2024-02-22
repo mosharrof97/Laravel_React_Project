@@ -1,0 +1,42 @@
+.BtnLeft {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: var(--primary);
+    color: var(--light);
+    border: var(--primary);
+    
+}
+
+.BtnLeft:hover{
+    background: var(--primary);
+    color: var(--light);
+    border: var(--primary);
+    
+}
+.BtnLeft:active{
+    background: var(--primary) !important;
+    color: var(--light) !important;
+    border: var(--primary) !important;
+}
+.BtnRight {
+    padding: 15px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: var(--light);
+    color: var(--dark);
+    border: var(--primary);
+}
+
+.BtnRight:hover {
+    background: var(--light);
+    color: var(--dark);
+    border: var(--primary);
+}
+.BtnRight:active{
+    background: var(--light) !important;
+    color: var(--dark) !important;
+    border: var(--primary) !important;
+}
