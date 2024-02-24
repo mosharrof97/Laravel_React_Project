@@ -19,88 +19,7 @@ export default function Login() {
       console.log(e);
     }
   };
-  // const [error, setError] = useState("");
-  // const [msg, setMsg] = useState("");
 
-  // useEffect(() => {
-  //   let login = localStorage.getItem("login");
-  //   if (login) {
-  //     naviget("/dashboard");
-  //   }
-  //   let loginStatus = localStorage.getItem("loginStatus");
-  //   if (loginStatus) {
-  //     setError(loginStatus);
-  //     setTimeout(function () {
-  //       localStorage.clear();
-  //       window.location.reload();
-  //     }, 3000);
-  //   }
-  //   setTimeout(function () {
-  //     setMsg("");
-  //   }, 5000);
-  // }, [msg]);
-
-  // const handleInputChange = (e, type) => {
-  //   switch (type) {
-  //     case "user":
-  //       setError("");
-  //       setEmail(e.target.value);
-  //       if (e.target.value === "") {
-  //         setError("Username has left blank");
-  //       }
-  //       break;
-  //     case "password":
-  //       setError("");
-  //       setPassword(e.target.value);
-  //       if (e.target.value === "") {
-  //         setError("Password has left blank");
-  //       }
-  //       break;
-  //     default:
-  //   }
-  // };
-
-  // function loginSubmit() {
-  //   if (email !== "" && password != "") {
-  //     var url = "http://127.0.0.1:8000/api/student/login";
-  //     var headers = {
-  //       Accept: "application/json",
-  //       "Content-type": "application/json",
-  //     };
-  //     var Data = {
-  //       email: email,
-  //       password: password,
-  //     };
-  //     fetch(url, {
-  //       method: "POST",
-  //       headers: headers,
-  //       body: JSON.stringify(Data),
-  //     })
-  //       .then((response) => response.json())
-  //       .then((response) => {
-  //         console.log(response);
-  //         if (
-  //           response[0].result === "Invalid Email!" ||
-  //           response[0].result === "Invalid password!"
-  //         ) {
-  //           setError(response[0].result);
-  //         } else {
-  //           setMsg(response[0].result);
-  //           setTimeout(function () {
-  //             localStorage.setItem("login", true);
-  //             localStorage.setItem("email", email);
-  //             naviget("/dashboard");
-  //           }, 5000);
-  //         }
-  //       })
-  //       .catch((err) => {
-  //         setError(err);
-  //         console.log(err);
-  //       });
-  //   } else {
-  //     setError("All field are required!");
-  //   }
-  // }
   return (
     <>
       <section className="" style={{ backgroundColor: "#bbdbfa" }}>
@@ -191,3 +110,86 @@ export default function Login() {
     </>
   );
 }
+
+// const [error, setError] = useState("");
+// const [msg, setMsg] = useState("");
+
+// useEffect(() => {
+//   let login = localStorage.getItem("login");
+//   if (login) {
+//     naviget("/dashboard");
+//   }
+//   let loginStatus = localStorage.getItem("loginStatus");
+//   if (loginStatus) {
+//     setError(loginStatus);
+//     setTimeout(function () {
+//       localStorage.clear();
+//       window.location.reload();
+//     }, 3000);
+//   }
+//   setTimeout(function () {
+//     setMsg("");
+//   }, 5000);
+// }, [msg]);
+
+// const handleInputChange = (e, type) => {
+//   switch (type) {
+//     case "user":
+//       setError("");
+//       setEmail(e.target.value);
+//       if (e.target.value === "") {
+//         setError("Username has left blank");
+//       }
+//       break;
+//     case "password":
+//       setError("");
+//       setPassword(e.target.value);
+//       if (e.target.value === "") {
+//         setError("Password has left blank");
+//       }
+//       break;
+//     default:
+//   }
+// };
+
+// function loginSubmit() {
+//   if (email !== "" && password != "") {
+//     var url = "http://127.0.0.1:8000/api/student/login";
+//     var headers = {
+//       Accept: "application/json",
+//       "Content-type": "application/json",
+//     };
+//     var Data = {
+//       email: email,
+//       password: password,
+//     };
+//     fetch(url, {
+//       method: "POST",
+//       headers: headers,
+//       body: JSON.stringify(Data),
+//     })
+//       .then((response) => response.json())
+//       .then((response) => {
+//         console.log(response);
+//         if (
+//           response[0].result === "Invalid Email!" ||
+//           response[0].result === "Invalid password!"
+//         ) {
+//           setError(response[0].result);
+//         } else {
+//           setMsg(response[0].result);
+//           setTimeout(function () {
+//             localStorage.setItem("login", true);
+//             localStorage.setItem("email", email);
+//             naviget("/dashboard");
+//           }, 5000);
+//         }
+//       })
+//       .catch((err) => {
+//         setError(err);
+//         console.log(err);
+//       });
+//   } else {
+//     setError("All field are required!");
+//   }
+// }
