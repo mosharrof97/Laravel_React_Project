@@ -38,7 +38,7 @@ const AddUser = () => {
   };
 
   return (
-    <div className="row d-flex justify-content-center my-5">
+    <div className="row d-flex justify-content-center my-5 min-h-screen">
       <div className="col-5">
         <form onSubmit={handleSubmit}>
           <h2 className="mb-4 text-center">Student SignUp</h2>

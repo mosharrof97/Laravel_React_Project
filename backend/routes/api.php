@@ -24,15 +24,21 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 ///////////////////////////////////////////////
-Route::middleware('admin')->group(function (){
-    Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
-});
-
 Route::prefix('admin')->group(function (){
-    Route::get('/login', [AdminController::class, 'login']);
-    Route::post('/login-submit', [AdminController::class, 'login_submit']);
-    Route::get('/logout', [AdminController::class, 'logout']);
+// Route::get('/login', [AdminController::class, 'login']);
+Route::post('/login', [AdminController::class, 'login_submit']);
+});
+///////////////////////////////////////////////
+// Route::middleware('admin')->group(function (){
+// Route::get('admin/dashboard', [AdminController::class, 'dashboard']);
+// });
+
+Route::prefix('admin')->middleware('admin')->group(function (){
     
+    Route::get('/logout', [AdminController::class, 'logout']);
+
+    Route::get('/dashboard', [AdminController::class, 'dashboard']);
+
     Route::get('/list', [AdminController::class, 'adminList']);
     Route::get('/view/{id}', [AdminController::class, 'adminView']);
     Route::get('/create', [AdminController::class, 'createAdmin']);
